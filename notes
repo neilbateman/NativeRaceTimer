@@ -1,0 +1,7 @@
+() => {
+  this.props.navigation.navigate('RacerDetails', {
+    racerkey: `${JSON.stringify(item.key)}`,
+  });
+}
+
+console.log(this.state.racers[i])
