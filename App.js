@@ -45,9 +45,9 @@ const RootStack = createAppContainer(Stack);
 export default class App extends React.Component {
   render() {
     return(
-      <View style={styles.container}>
+      //<View style={styles.container}>
         <RootStack />
-        </View>
+        //</View>
 
     )
 
@@ -57,7 +57,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#777776',
+    //backgroundColor: '#777776',
     alignItems: 'center',
     justifyContent: 'center',
   },

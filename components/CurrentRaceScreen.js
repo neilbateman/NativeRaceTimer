@@ -62,48 +62,12 @@ class RacerScreen extends Component {
   resetStopwatch = () => {
     this.setState({isStopwatchStart: false, resetStopwatch: true});
   }
+  millisToMinutesAndSeconds = (millis) => {
+    var minutes = Math.floor(millis / 60000);
+    var seconds = ((millis % 60000) / 1000).toFixed(0);
+    return (seconds == 60 ? (minutes+1) + ":00" : minutes + ":" + (seconds < 10 ? "0" : "") + seconds);
+  }
 
-  collectTime = () => {
-    let currentTime = Date.now();
-    //console.log("CurrentTime:",currentTime, "StartTime",this.state.startTime)
-    let resolvedTime = currentTime - this.state.startTime;
-    //console.log("timeDiff:",resolvedTime)
-
-    //firebase.firestore().collection('racers').doc(key).push(resolvedTime)
-    //this.setState({racers.time: resolvedTime})
-    //console.log(, this.state.timeSnapshot)
-  }
-  associateTimewithRunner = () => {
-    this.collectTime();
-    const updateRef = firebase.firestore().collection('racers').doc(this.state.key);
-    updateRef.add({time: this.resolvedTime})
-
-    console.log(this.state.racers)
-  }
-  getRaceTime = () => {
-    this.collectTime();
-
-    let currentRacer = this.state.key;
-    let updateRacerTime = firebase.firestore().collection('racers').doc(currentRacer);
-    updateRacerTime.add({time: this.resolvedTime})
-  }
-  logIt = () => {
-    this.collectTime();
-    console.log(this.resolvedTime)
-  }
-  addRacer = (key) => {
-    let currentTime = Date.now();
-    let currentRacer = this.state.racers[1];
-    let resolveTime = currentTime - this.state.startTime;
-    console.log(resolveTime)
-    firebase.firestore().collection('racers').add({ time: resolveTime})
-  }
-  updateRacer = () => {
-    this.collectTime();
-    let currentRacer = this.state.racers[1];
-    console.log(currentRacer)
-    firebase.firestore().collection('racers').doc(currentRacer).add({
-      time: this.resolvedTime})}
 
   render() {
     if(this.state.isLoading){
@@ -114,14 +78,15 @@ class RacerScreen extends Component {
       )
     }
     return (
-
       <ScrollView style={styles.container}>
       <Stopwatch laps msecs
         start={this.state.isStopwatchStart}
         reset={this.state.resetStopwatch}
+        options={options}
+
          />
       <TouchableHighlight onPress={this.startStopStopWatch}>
-        <Text style={{fontSize: 20, marginTop:10}}>
+        <Text style={{fontSize: 20, marginTop:10, alignContent: 'center'}}>
           {!this.state.isStopwatchStart ? "START" : "STOP"}
         </Text>
       </TouchableHighlight>
@@ -141,10 +106,11 @@ class RacerScreen extends Component {
                 onPress={() => {
                   let nowTime = Date.now();
                   let resolveTime = nowTime - this.state.startTime;
+                  let resolveTimeMins = this.millisToMinutesAndSeconds(resolveTime);
                   let racerRef = firebase.firestore().collection('racers').doc(item.key)
-                  this.collectTime();
                   racerRef.update({
-                    time: resolveTime
+                    time: resolveTimeMins
+                    
                   })
                 }}
               />
@@ -160,7 +126,8 @@ class RacerScreen extends Component {
 const styles = StyleSheet.create({
   container: {
    flex: 1,
-   paddingBottom: 22
+   paddingBottom: 22,
+   alignContent: 'center'
   },
   item: {
     padding: 10,
@@ -177,5 +144,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 })
+
+const options = {
+  container: {
+    backgroundColor: '#FF0000',
+    padding: 10,
+    borderRadius: 5,
+    width: 200,
+    alignItems:'center',
+    justifyContent: 'center'
+  },
+  text: {
+    fontSize: 25,
+    color: '#FFF',
+    marginLeft: 7,
+    alignItems: 'center'
+  }
+};
 
 export default RacerScreen;
