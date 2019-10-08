@@ -3,8 +3,10 @@ import { StyleSheet, ScrollView, ActivityIndicator, View, Text, TouchableHighlig
 import { List, ListItem, Button, Icon, Card } from 'react-native-elements';
 import { Stopwatch } from 'react-native-stopwatch-timer';
 import firebase from '../Firebase';
+import { useKeepAwake } from 'expo-keep-awake';
 
 class RacerScreen extends Component {
+  useKeepAwake();
   static navigationOptions = ({ navigation }) => {
     return {
       title: 'Current Race',

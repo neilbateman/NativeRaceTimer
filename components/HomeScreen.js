@@ -154,7 +154,7 @@ export default class HomeScreen extends React.Component {
                 <View style={{
                     flexDirection: 'row',
                 }}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('RaceScreen')} style={{
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('CurrentRaceScreen')} style={{
                         width: this.getItemWidth(),
                         alignItems: 'center',
                         backgroundColor: '#fff',
@@ -189,7 +189,7 @@ export default class HomeScreen extends React.Component {
                         }}>Race</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('CurrentRaceScreen')} style={{
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('RaceResult')} style={{
                         width: this.getItemWidth(),
                         alignItems: 'center',
                         backgroundColor: '#fff',
