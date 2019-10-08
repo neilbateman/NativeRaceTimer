@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
-import { createBottomTabNavigator } from 'react-navigation-tabs'
 import RacerScreen from './components/RacerScreen';
 import RacerDetailScreen from './components/RacerDetailScreen';
 import AddRacerScreen from './components/AddRacerScreen';
@@ -14,6 +13,17 @@ import CurrentRaceScreen from './components/CurrentRaceScreen';
 import 'firebase/auth';
 import { FirebaseAuthProvider, IfFirebaseAuthed } from '@react-firebase/auth'
 import firebase from './Firebase';
+import { YellowBox } from 'react-native';
+import _ from 'lodash';
+
+YellowBox.ignoreWarnings(['Setting a timer']);
+const _console = _.clone(console);
+console.warn = message => {
+  if (message.indexOf('Setting a timer') <= -1) {
+    _console.warn(message);
+  }
+};
+
 const Stack = createStackNavigator(
   {
     Home: HomeScreen,
@@ -40,15 +50,16 @@ const Stack = createStackNavigator(
   },
 );
 
+
 const RootStack = createAppContainer(Stack);
 
 
 export default class App extends React.Component {
+
   render() {
     return(
-      //<View style={styles.container}>
+
         <RootStack />
-        //</View>
 
     )
 
