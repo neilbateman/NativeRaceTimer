@@ -109,7 +109,8 @@ class RacerScreen extends Component {
                   let resolveTimeMins = this.millisToMinutesAndSeconds(resolveTime);
                   let racerRef = firebase.firestore().collection('racers').doc(item.key)
                   racerRef.update({
-                    time: resolveTimeMins
+                    time: resolveTimeMins,
+                    exactTime: resolveTime
                     
                   })
                 }}

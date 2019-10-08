@@ -60,23 +60,23 @@ class AddRacerScreen extends Component {
       <ScrollView style={styles.container}>
         <View style={styles.subContainer}>
           <TextInput
-              placeholder={'Title'}
+              placeholder={'Name'}
               value={this.state.title}
               onChangeText={(text) => this.updateTextInput(text, 'title')}
           />
         </View>
         <View style={styles.subContainer}>
           <TextInput
-              multiline={true}
-              numberOfLines={4}
-              placeholder={'Description'}
+            //  multiline={true}
+            //  numberOfLines={4}
+              placeholder={'Age'}
               value={this.state.description}
               onChangeText={(text) => this.updateTextInput(text, 'description')}
           />
         </View>
         <View style={styles.subContainer}>
           <TextInput
-              placeholder={'Author'}
+              placeholder={'Race #'}
               value={this.state.author}
               onChangeText={(text) => this.updateTextInput(text, 'author')}
           />

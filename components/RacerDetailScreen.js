@@ -61,13 +61,13 @@ class RacerDetailScreen extends Component {
         <Card style={styles.container}>
           <View style={styles.subContainer}>
             <View>
-              <Text h3>{this.state.racer.title}</Text>
+              <Text h3>Name: {this.state.racer.title}</Text>
             </View>
             <View>
-              <Text h5>{this.state.racer.description}</Text>
+              <Text h4>Age: {this.state.racer.description}</Text>
             </View>
             <View>
-              <Text h4>{this.state.racer.author}</Text>
+              <Text h4>Race # {this.state.racer.author}</Text>
             </View>
           </View>
           <View style={styles.detailButton}>
