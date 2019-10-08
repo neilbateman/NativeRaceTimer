@@ -3,10 +3,9 @@ import { StyleSheet, ScrollView, ActivityIndicator, View, Text, TouchableHighlig
 import { List, ListItem, Button, Icon, Card } from 'react-native-elements';
 import { Stopwatch } from 'react-native-stopwatch-timer';
 import firebase from '../Firebase';
-import { useKeepAwake } from 'expo-keep-awake';
+import { activateKeepAwake } from 'expo-keep-awake';
 
 class RacerScreen extends Component {
-  useKeepAwake();
   static navigationOptions = ({ navigation }) => {
     return {
       title: 'Current Race',
@@ -58,6 +57,7 @@ class RacerScreen extends Component {
   }
   
   startStopStopWatch = () => {
+    this._activate();
     this.setState({startTime: Date.now(), isStopwatchStart: !this.state.isStopwatchStart, resetStopwatch: false});
     console.log(this.state.startTime);
   }
@@ -68,6 +68,9 @@ class RacerScreen extends Component {
     var minutes = Math.floor(millis / 60000);
     var seconds = ((millis % 60000) / 1000).toFixed(0);
     return (seconds == 60 ? (minutes+1) + ":00" : minutes + ":" + (seconds < 10 ? "0" : "") + seconds);
+  }
+  _activate = () => {
+    activateKeepAwake();
   }
 
 
