@@ -69,6 +69,9 @@ class RacerDetailScreen extends Component {
             <View>
               <Text h4>Race # {this.state.racer.author}</Text>
             </View>
+            <View>
+              <Text h4>Time: {this.state.racer.time}</Text>
+            </View>
           </View>
           <View style={styles.detailButton}>
             <Button

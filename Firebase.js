@@ -1,6 +1,22 @@
 import * as firebase from 'firebase';
 import firestore from 'firebase/firestore'
 import 'firebase/auth';
+import React, { useEffect, useState } from 'react';
+
+export const AuthContext = React.createContext();
+export const AuthProvider = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    config.auth().onAuthStateChanged(setCurrentUser);
+  }, []);
+  return (
+    <AuthContext.Provider value ={{currentUser}}>
+    {children}
+    </AuthContext.Provider>
+  )
+}
+
 
 const settings = {timestampsInSnapshots: true};
 
@@ -17,5 +33,6 @@ const config = {
 firebase.initializeApp(config);
 
 firebase.firestore().settings(settings);
+
 
 export default firebase;
