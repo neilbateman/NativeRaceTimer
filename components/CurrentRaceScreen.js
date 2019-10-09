@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, ActivityIndicator, View, Text, TouchableHighlight } from 'react-native';
+import { StyleSheet, ScrollView, ActivityIndicator, View, Text, TouchableHighlight, Dimensions } from 'react-native';
 import { List, ListItem, Button, Icon, Card } from 'react-native-elements';
 import { Stopwatch } from 'react-native-stopwatch-timer';
 import firebase from '../Firebase';
@@ -83,24 +83,24 @@ class RacerScreen extends Component {
       )
     }
     return (
-      <ScrollView style={styles.container}>
+      <View style={styles.mainContainer}>
+      <ScrollView contentContainerStyle={{flexGrow : 1, justifyContent : 'center'}} centerContent>
+      <View style={styles.scrollViewContainer}>
       <Stopwatch laps msecs
         start={this.state.isStopwatchStart}
         reset={this.state.resetStopwatch}
         options={options}
 
          />
-      <TouchableHighlight onPress={this.startStopStopWatch}>
+      <TouchableHighlight onLongPress={this.startStopStopWatch}>
         <Text style={{fontSize: 20, marginTop:10, alignContent: 'center'}}>
           {!this.state.isStopwatchStart ? "START" : "STOP"}
         </Text>
       </TouchableHighlight>
-      <TouchableHighlight onPress={this.resetStopwatch}>
+      <TouchableHighlight onLongPress={this.resetStopwatch}>
         <Text style={{fontSize: 20, marginTop:10}}>RESET</Text>
       </TouchableHighlight>
-      <TouchableHighlight onPress={this.collectTime}>
-        <Text style={{fontSize: 20, marginTop:10}}>get diff</Text>
-      </TouchableHighlight>
+   
           {
             this.state.racers.map((item, i) => (
               <ListItem
@@ -123,33 +123,14 @@ class RacerScreen extends Component {
 
             ))
           }
-
+      </View>
       </ScrollView>
+      </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-   flex: 1,
-   paddingBottom: 22,
-   alignContent: 'center'
-  },
-  item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44,
-  },
-  activity: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})
+
 
 const options = {
   container: {
@@ -167,5 +148,24 @@ const options = {
     alignItems: 'center'
   }
 };
+
+const styles = StyleSheet.create({scrollView : {
+  height : Dimensions.get('window').height, }, mainContainer : {
+  flex : 1, justifyContent: 'center', alignItems: 'center',  }, scrollViewContainer : { },
+
+
+  container: {
+    padding: 50,
+    flex: 1,
+    paddingBottom: 22,
+    //alignContent: 'center'
+    
+   },
+   item: {
+     padding: 10,
+     fontSize: 18,
+     height: 44,
+   },
+})
 
 export default RacerScreen;

@@ -28,17 +28,8 @@ export default class HomeScreen extends React.Component {
                 textAlign: 'center'
             },
             headerTitle: (
-                <View style={{flex:1, flexDirection:'row', justifyContent:'center'}}>
-                    <Image
-                        source={require('../assets/icon.png')}
-                        fadeDuration={0}
-                        style={{
-                            width: 98,
-                            height: 24,
-                            alignSelf: 'center'
-                        }}
-                    />
-                </View>
+                <View style={{flex:1, flexDirection:'row', justifyContent:'center'}}><Text style={{fontSize: 20}}>Native Race Timer</Text></View>
+
             ),
             headerRight: (
                 <TouchableOpacity onPress={navigation.getParam('signOut')}>
@@ -96,17 +87,12 @@ export default class HomeScreen extends React.Component {
                         shadowRadius: 12,
                         elevation: 5
                     }}>
-                        <Image
-                            source={require('../assets/icons/feed.png')}
-                            fadeDuration={0}
-                            style={{
-                                width: 30,
-                                height: 30,
-                                marginTop: 15,
-                                marginBottom: 10
-                            }}
-                        />
-
+                        <Ionicons name="md-list" size={32} color="black"style={{
+                        width: 30,
+                        height: 30,
+                        marginTop: 15,
+                        marginBottom: 10 }}/>
+                        
                         <Text style={{
                             fontSize: 15,
                             textAlign: 'center',
@@ -131,17 +117,12 @@ export default class HomeScreen extends React.Component {
                         shadowRadius: 12,
                         elevation: 5
                     }}>
-                        <Image
-                            source={require('../assets/icons/todo.png')}
-                            fadeDuration={0}
-                            style={{
-                                width: 30,
-                                height: 30,
-                                marginTop: 15,
-                                marginBottom: 10
-                            }}
-                        />
-
+                    <Ionicons name="md-person-add" size={32} color="black"style={{
+                        width: 30,
+                        height: 30,
+                        marginTop: 15,
+                        marginBottom: 10 }}/>
+                       
                         <Text style={{
                             fontSize: 15,
                             textAlign: 'center',
@@ -170,16 +151,11 @@ export default class HomeScreen extends React.Component {
                         shadowRadius: 12,
                         elevation: 5
                     }}>
-                        <Image
-                            source={require('../assets/icons/map.png')}
-                            fadeDuration={0}
-                            style={{
-                                width: 30,
-                                height: 30,
-                                marginTop: 15,
-                                marginBottom: 10
-                            }}
-                        />
+                        <Ionicons name="md-timer" size={32} color="black"style={{
+                        width: 30,
+                        height: 30,
+                        marginTop: 15,
+                        marginBottom: 10 }}/>
 
                         <Text style={{
                             fontSize: 15,
@@ -205,16 +181,11 @@ export default class HomeScreen extends React.Component {
                         shadowRadius: 12,
                         elevation: 5
                     }}>
-                        <Image
-                            source={require('../assets/icons/comments.png')}
-                            fadeDuration={0}
-                            style={{
-                                width: 30,
-                                height: 30,
-                                marginTop: 15,
-                                marginBottom: 10
-                            }}
-                        />
+                        <Ionicons name="md-attach" size={32} color="black"style={{
+                        width: 30,
+                        height: 30,
+                        marginTop: 15,
+                        marginBottom: 10 }}/>
 
                         <Text style={{
                             fontSize: 15,
