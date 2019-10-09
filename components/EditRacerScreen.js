@@ -90,8 +90,8 @@ class EditRacerScreen extends Component {
         </View>
         <View style={styles.subContainer}>
           <TextInput
-              multiline={true}
-              numberOfLines={4}
+             // multiline={true}
+              //numberOfLines={4}
               placeholder={'Description'}
               value={this.state.description}
               onChangeText={(text) => this.updateTextInput(text, 'description')}

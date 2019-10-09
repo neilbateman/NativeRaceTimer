@@ -151,7 +151,7 @@ const options = {
 
 const styles = StyleSheet.create({scrollView : {
   height : Dimensions.get('window').height, }, mainContainer : {
-  flex : 1, justifyContent: 'center', alignItems: 'center',  }, scrollViewContainer : { },
+  flex : 1, justifyContent: 'left', alignItems: 'center',  }, scrollViewContainer : { },
 
 
   container: {

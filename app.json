@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "firebasework",
-    "slug": "work",
+    "name": "NativeRaceTimer",
+    "slug": "nativeracetimer",
     "privacy": "public",
     "sdkVersion": "35.0.0",
     "platforms": [
@@ -25,6 +25,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "Capstone project for Epicodus programming bootcamp. Written in  react-native with Firebase authentication and Firestore nosql data storage",
+    "githubUrl": "https://github.com/neilbateman/NativeRaceTimer"
   }
 }

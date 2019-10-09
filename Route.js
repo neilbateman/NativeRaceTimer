@@ -22,11 +22,10 @@ const Stack = createStackNavigator(
     CurrentRaceScreen: CurrentRaceScreen
   },
   {
-    initialRouteName: 'Login',
+    initialRouteName: 'CurrentRaceScreen',
 
   },
 );
-
 
 const RootStack = createAppContainer(Stack);
 
