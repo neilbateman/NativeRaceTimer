@@ -4,6 +4,7 @@ import AutoHeightImage from 'react-native-auto-height-image';
 import { ImagePicker, Permissions, Location } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import { Font } from 'expo';
+import firebase from 'react-native-firebase'
 
 export default class HomeScreen extends React.Component {
     static navigationOptions = ({ navigation }) => {
