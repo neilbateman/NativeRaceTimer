@@ -16,6 +16,7 @@ export default class Login extends React.Component {
 
   render() {
     return (
+      <View style={{flex: 1,backgroundColor: '#fff7e6'}}>
       <ScrollView style={styles.container}>
         {this.state.errorMessage &&
           <Text style={{ color: 'red' }}>
@@ -44,6 +45,7 @@ export default class Login extends React.Component {
         <Button large title="Login" onPress={this.handleLogin} />
       </View>
       </ScrollView >
+      </View>
 
     )
   }

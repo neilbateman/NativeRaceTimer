@@ -64,6 +64,7 @@ export default class HomeScreen extends React.Component {
 
     render() {
         return (
+            <View style={{flex: 1,backgroundColor: '#fff7e6'}}>
             <ScrollView style={{
                 backgroundColor: '#fff',
                 padding: 15
@@ -196,6 +197,7 @@ export default class HomeScreen extends React.Component {
                     </TouchableOpacity>
                 </View>
             </ScrollView>
+            </View>
         );
     }
 }
