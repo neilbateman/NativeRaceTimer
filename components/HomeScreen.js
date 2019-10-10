@@ -66,11 +66,12 @@ export default class HomeScreen extends React.Component {
         return (
             <View style={{flex: 1,backgroundColor: '#fff7e6'}}>
             <ScrollView style={{
-                backgroundColor: '#fff',
+              backgroundColor: '#fff7e6',
                 padding: 15
             }}>
                 <View style={{
                     flexDirection: 'row',
+                    backgroundColor: '#fff7e6'
                 }}>
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('Racer')} style={{
                         width: this.getItemWidth(),
@@ -93,7 +94,7 @@ export default class HomeScreen extends React.Component {
                         height: 30,
                         marginTop: 15,
                         marginBottom: 10 }}/>
-                        
+
                         <Text style={{
                             fontSize: 15,
                             textAlign: 'center',
@@ -123,7 +124,7 @@ export default class HomeScreen extends React.Component {
                         height: 30,
                         marginTop: 15,
                         marginBottom: 10 }}/>
-                       
+
                         <Text style={{
                             fontSize: 15,
                             textAlign: 'center',

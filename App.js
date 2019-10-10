@@ -1,7 +1,6 @@
 import React from 'react';
 import Route from './Route';
 import 'firebase/auth';
-import { FirebaseAuthProvider, IfFirebaseAuthed } from '@react-firebase/auth'
 import firebase from './Firebase';
 import { YellowBox } from 'react-native';
 import _ from 'lodash';

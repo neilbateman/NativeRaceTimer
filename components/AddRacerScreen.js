@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, ActivityIndicator, View, TextInput } from 'react-native';
-import { Button } from 'react-native-elements';
+import { StyleSheet, ScrollView, ActivityIndicator, View, TextInput, Button } from 'react-native';
 import firebase from '../Firebase';
 
 class AddRacerScreen extends Component {
@@ -83,6 +82,7 @@ class AddRacerScreen extends Component {
         </View>
         <View style={styles.button}>
           <Button
+            color='#5cdbd3'
             large
             leftIcon={{name: 'save'}}
             title='Save'

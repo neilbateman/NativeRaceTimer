@@ -42,7 +42,7 @@ export default class Login extends React.Component {
         />
         </View>
         <View style={styles.button}>
-        <Button large title="Login" onPress={this.handleLogin} />
+        <Button large title="Login" onPress={this.handleLogin} color='#5cdbd3'/>
       </View>
       </ScrollView >
       </View>

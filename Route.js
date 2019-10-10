@@ -9,8 +9,6 @@ import HomeScreen from './components/HomeScreen';
 import RaceResult from './components/RaceResult'
 import CurrentRaceScreen from './components/CurrentRaceScreen';
 import Login from './components/Login';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-
 import {View, StyleSheet} from 'react-native'
 
 const Stack = createStackNavigator(
@@ -30,24 +28,10 @@ const Stack = createStackNavigator(
   },
 );
 
-const BottomStack = createBottomTabNavigator(
-  {
-
-    Home: HomeScreen,
-    CurrentRaceScreen: CurrentRaceScreen,
-    Racer: RacerScreen,
-    AddRacer: AddRacerScreen,
-    RaceResult: RaceResult,
-
-  },
-
-);
-
 const RootStack = createAppContainer(Stack);
 const Route = () => (
   <View style={styles.container}>
-  <RootStack />
-
+    <RootStack />
   </View>
 )
 export default Route;
