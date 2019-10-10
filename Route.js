@@ -9,6 +9,8 @@ import HomeScreen from './components/HomeScreen';
 import RaceResult from './components/RaceResult'
 import CurrentRaceScreen from './components/CurrentRaceScreen';
 import Login from './components/Login';
+import {blue} from '@ant-design/colors'
+import {View, StyleSheet} from 'react-native'
 
 const Stack = createStackNavigator(
   {
@@ -22,7 +24,7 @@ const Stack = createStackNavigator(
     CurrentRaceScreen: CurrentRaceScreen
   },
   {
-    initialRouteName: 'CurrentRaceScreen',
+    initialRouteName: 'Login',
 
   },
 );
@@ -30,6 +32,12 @@ const Stack = createStackNavigator(
 const RootStack = createAppContainer(Stack);
 
 const Route = () => (
+  <View style={styles.container}>
   <RootStack />
+  </View>
 )
 export default Route;
+
+const styles = StyleSheet.create({
+  container: {backgroundColor: '#adc6ff'}
+})
