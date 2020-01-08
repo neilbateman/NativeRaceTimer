@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
     config.auth().onAuthStateChanged(setCurrentUser);
   }, []);
   return (
-    <AuthContext.Provider value ={{currentUser}}>
+    <AuthContext.Provider value={{currentUser}}>
     {children}
     </AuthContext.Provider>
   )
@@ -32,7 +32,7 @@ const config = {
 };
 firebase.initializeApp(config);
 
-firebase.firestore().settings(settings);
+// firebase.firestore().settings(settings);
 
 
 export default firebase;
