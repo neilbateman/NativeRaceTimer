@@ -150,11 +150,9 @@ const options = {
     alignItems: 'center'
   }
 };
-
 const styles = StyleSheet.create({scrollView : {
   height : Dimensions.get('window').height, }, mainContainer : {
-  flex : 1, justifyContent: 'left', alignItems: 'left',    marginTop: 20, backgroundColor: '#e8e8e8'}, scrollViewContainer : { },
-
+  flex : 1, alignItems: 'center',  }, scrollViewContainer : { },
 
   container: {
     padding: 50,

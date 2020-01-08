@@ -1,10 +1,11 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": null,
-  "packagerPid": null,
-  "expoServerNgrokUrl": "https://ht-raf.anonymous.nativeracetimer.exp.direct",
-  "packagerNgrokUrl": "https://packager.ht-raf.anonymous.nativeracetimer.exp.direct",
-  "ngrokPid": 19404,
-  "webpackServerPort": 19006
+
+  "packagerPort": 19001,
+  "packagerPid": 1188,
+  "expoServerNgrokUrl": "https://vs-y8e.neilbateman.nativeracetimer.exp.direct",
+  "packagerNgrokUrl": "https://packager.vs-y8e.neilbateman.nativeracetimer.exp.direct",
+  "ngrokPid": 14680,
+  "webpackServerPort": null
 }

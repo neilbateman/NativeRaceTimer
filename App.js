@@ -5,6 +5,7 @@ import firebase from './Firebase';
 import { YellowBox } from 'react-native';
 import _ from 'lodash';
 import {View, StyleSheet} from 'react-native';
+console.disableYellowBox = true;
 
 
 // YellowBox.ignoreWarnings(['Setting a timer']);
@@ -20,7 +21,7 @@ export default class App extends React.Component {
 
   render() {
     return(
-      <View style={{flex: 1,backgroundColor: '#e8e8e8'}}>
+      <View style={{flex: 1, backgroundColor: '#6ED4C8'}}>
       <Route />
       </View>
 

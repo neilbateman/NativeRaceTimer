@@ -29,10 +29,9 @@ const Stack = createStackNavigator(
 );
 
 const RootStack = createAppContainer(Stack);
+
 const Route = () => (
-  <View style={styles.container}>
-    <RootStack />
-  </View>
+  <RootStack />
 )
 export default Route;
 
