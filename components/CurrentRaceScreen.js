@@ -35,7 +35,6 @@ class RacerScreen extends Component {
   }
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate);
-    // console.log(ref.key)
   }
   onCollectionUpdate = (querySnapshot) => {
     const racers = [];
@@ -43,7 +42,7 @@ class RacerScreen extends Component {
       const { title, description, author, time } = doc.data();
       racers.push({
         key: doc.id,
-        doc, // DocumentSnapshot
+        doc,
         title,
         description,
         author,
@@ -55,7 +54,7 @@ class RacerScreen extends Component {
       isLoading: false,
    });
   }
-  
+
   startStopStopWatch = () => {
     this._activate();
     this.setState({startTime: Date.now(), isStopwatchStart: !this.state.isStopwatchStart, resetStopwatch: false});
@@ -83,30 +82,32 @@ class RacerScreen extends Component {
       )
     }
     return (
-      <View style={styles.mainContainer}>
+      <View style={styles.mainContainer} >
       <ScrollView contentContainerStyle={{flexGrow : 1, justifyContent : 'center'}} centerContent>
       <View style={styles.scrollViewContainer}>
+      <View styles={{alignItems: 'center'}}>
       <Stopwatch laps msecs
         start={this.state.isStopwatchStart}
         reset={this.state.resetStopwatch}
         options={options}
-
          />
-      <TouchableHighlight onLongPress={this.startStopStopWatch}>
+      </View>
+      <TouchableHighlight onLongPress={this.startStopStopWatch} style={{alignItems: 'center'}}>
         <Text style={{fontSize: 20, marginTop:10, alignContent: 'center'}}>
           {!this.state.isStopwatchStart ? "START" : "STOP"}
         </Text>
       </TouchableHighlight>
-      <TouchableHighlight onLongPress={this.resetStopwatch}>
+      <TouchableHighlight onLongPress={this.resetStopwatch} style={{alignItems: 'center'}}>
         <Text style={{fontSize: 20, marginTop:10}}>RESET</Text>
       </TouchableHighlight>
-   
+
           {
             this.state.racers.map((item, i) => (
               <ListItem
+                titleStyle={{backgroundColor:  '#e8e8e8'}}
                 key={i}
                 title={item.title}
-                subtitle={item.time} 
+                subtitle={item.time}
                 leftIcon={{name: 'face', type: 'material'}}
                 onPress={() => {
                   let nowTime = Date.now();
@@ -116,7 +117,7 @@ class RacerScreen extends Component {
                   racerRef.update({
                     time: resolveTimeMins,
                     exactTime: resolveTime
-                    
+
                   })
                 }}
               />
@@ -134,32 +135,31 @@ class RacerScreen extends Component {
 
 const options = {
   container: {
-    backgroundColor: '#FF0000',
+    backgroundColor: '#ffccc7',
     padding: 10,
+    paddingLeft: 10,
     borderRadius: 5,
-    width: 200,
+    width: 'fit-content',
     alignItems:'center',
     justifyContent: 'center'
   },
   text: {
     fontSize: 25,
-    color: '#FFF',
+    color: '#873800',
     marginLeft: 7,
     alignItems: 'center'
   }
 };
-
 const styles = StyleSheet.create({scrollView : {
   height : Dimensions.get('window').height, }, mainContainer : {
   flex : 1, alignItems: 'center',  }, scrollViewContainer : { },
-
 
   container: {
     padding: 50,
     flex: 1,
     paddingBottom: 22,
     //alignContent: 'center'
-    
+
    },
    item: {
      padding: 10,

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, ActivityIndicator, View, TextInput } from 'react-native';
-import { Button } from 'react-native-elements';
+import { StyleSheet, ScrollView, ActivityIndicator, View, TextInput, Button } from 'react-native';
 import firebase from '../Firebase';
 
 class EditRacerScreen extends Component {
@@ -104,8 +103,9 @@ class EditRacerScreen extends Component {
               onChangeText={(text) => this.updateTextInput(text, 'author')}
           />
         </View>
-        <View style={styles.button}>
+        <View>
           <Button
+            color='#5cdbd3'
             large
             leftIcon={{name: 'update'}}
             title='Update'

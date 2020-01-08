@@ -1,7 +1,6 @@
 import React from 'react';
 import Route from './Route';
 import 'firebase/auth';
-import { FirebaseAuthProvider, IfFirebaseAuthed } from '@react-firebase/auth'
 import firebase from './Firebase';
 import { YellowBox } from 'react-native';
 import _ from 'lodash';
@@ -22,7 +21,7 @@ export default class App extends React.Component {
 
   render() {
     return(
-      <View style={{flex: 1,backgroundColor: '#6ED4C8'}}>
+      <View style={{flex: 1, backgroundColor: '#6ED4C8'}}>
       <Route />
       </View>
 
